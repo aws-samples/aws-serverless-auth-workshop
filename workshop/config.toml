@@ -1,0 +1,41 @@
+RelativeURLs=true
+CanonifyURLs=true
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+title = "Serverless Auth "
+theme = "learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+uglyurls = true
+sectionPagesMenu = "main"
+pygmentsCodeFences = true
+pygmentsStyle = "monokai"
+
+[params]
+  editURL = "https://github.com/aws-samples/serverless-workshops"
+  description = "Serverless Identity Management, Authentication, and Authorization Workshop"
+  author = "Chris McPeek <cmcpeek@amazon.com>"
+  disableBreadcrumb = false
+  disableNextPrev = false
+  themeVariant = "aws"
+  disableSearch = false
+  disableAssetsBusting = true
+  disableLanguageSwitchingButton = false
+  disableShortcutsTitle = true
+  disableInlineCopyToClipBoard = true
+  artifactUrlPrefix = "https://serverless-workshops-artifacts.s3.amazonaws.com/wildrydes-auth/dev"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[blackfriday]
+plainIDAnchors = true
+hrefTargetBlank = true
+
+[Languages]
+[Languages.en]
+title = ""
+weight = 1
+languageName = "English"
