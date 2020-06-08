@@ -14,7 +14,7 @@ pygmentsCodeFences = true
 pygmentsStyle = "monokai"
 
 [params]
-  editURL = "https://github.com/aws-samples/serverless-workshops"
+  editURL = "https://github.com/aws-samples/aws-serverless-auth-workshop"
   description = "Serverless Identity Management, Authentication, and Authorization Workshop"
   author = "Chris McPeek <cmcpeek@amazon.com>"
   disableBreadcrumb = false

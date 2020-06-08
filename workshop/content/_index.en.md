@@ -12,7 +12,7 @@ This application architecture demonstrates end-to-end authentication and authori
 
 ### Issues, Comments, Feedback?
 
-I’m open source! If you see an issue, want to contribute content, or have overall feedback please open an issue or pull request in our GitHub repository: [github.com/aws-samples/aws-serverless-workshops/Auth](https://github.com/aws-samples/aws-serverless-workshops/Auth).
+I’m open source! If you see an issue, want to contribute content, or have overall feedback please open an issue or pull request in our GitHub repository: [github.com/aws-samples/aws-serverless-auth-workshop/](https://github.com/aws-samples/aws-serverless-auth-workshop/).
  
-{{% button href="https://github.com/aws-samples/aws-serverless-workshops/issues" icon="fas fa-bug" %}}Report an issue{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-serverless-auth-workshop/issues" icon="fas fa-bug" %}}Report an issue{{% /button %}}
 {{% button href="https://aws.amazon.com/serverless/developer-tools" icon="fas fa-graduation-cap" %}}Learn more{{% /button %}}
