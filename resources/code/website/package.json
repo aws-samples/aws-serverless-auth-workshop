@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "10": "0.0.1",
     "acorn": "^7.3.1",
     "aws-amplify": "^3.0.17",
     "aws-amplify-react": "^4.1.16",
     "axios": "^0.19.2",
-    "eslint": "^7.2.0",
     "esri-loader": "^2.2.0",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.12",
@@ -19,13 +19,24 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "set-value": "^3.0.2",
-    "uuid": "^8.1.0",
-    "webpack-dev-server": "^3.1.11"
+    "uuid": "^8.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
