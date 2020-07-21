@@ -10,7 +10,7 @@
     "axios": "^0.19.2",
     "esri-loader": "^2.2.0",
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.12",
+    "lodash": "^4.17.19",
     "mem": "^6.1.0",
     "minimist": "^1.2.2",
     "normalize.css": "^8.0.0",
