@@ -20,6 +20,15 @@ You should see output indicating your account and user information:
 
 Keep your AWS Cloud9 IDE opened in a tab throughout this workshop as you'll be using it for most activities.
 
+### Expand Cloud9 storage
+
+In order to accomodate dependencies, the underlying drive has already been expanded and we only need to increase the partition size with these 2 commands:
+
+```plaintext
+sudo growpart /dev/xvda 1 
+sudo resize2fs /dev/xvda1
+```
+ 
 ### Download Workshop Code
 
 Download the WildRydes website artifacts to your Cloud9 IDE environment by running the following command in the Cloud9 terminal window:
