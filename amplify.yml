@@ -5,7 +5,7 @@ frontend:
       commands:
         - tar -C resources/code/ -czf website.tar.gz .
         - aws s3 cp website.tar.gz s3://${S3_ARTIFACT_BUCKET}/${APP_NAME}/${AWS_BRANCH}/ --acl public-read
-	    - aws s3 cp resources/templates/Cloud9WithNewVPC.yaml s3://${S3_ARTIFACT_BUCKET}/${APP_NAME}/${AWS_BRANCH}/ --acl public-read
+        - aws s3 cp resources/templates/Cloud9WithNewVPC.yaml s3://${S3_ARTIFACT_BUCKET}/${APP_NAME}/${AWS_BRANCH}/ --acl public-read
         - git clone https://github.com/matcornic/hugo-theme-learn.git workshop/themes/learn
         - hugo version
         - env HUGO_PARAMS_artifactUrlPrefix=https://${S3_ARTIFACT_BUCKET}.s3.amazonaws.com/${APP_NAME}/${AWS_BRANCH} hugo --source workshop --destination ../public --quiet
