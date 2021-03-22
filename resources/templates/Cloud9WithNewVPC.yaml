@@ -120,8 +120,10 @@
               responseData['Data'] = volume_id
 
               try:
-                ec2.modify_volume(VolumeId=volume_id, Size=20)
-              except:
+                volume_response = ec2.modify_volume(VolumeId=volume_id, Size=20)
+                print(volume_response)
+              except Exception as err:
+                print(err)
                 responseData['Data'] = 'Failed'
                 cfnresponse.send(event, context, cfnresponse.FAILED, responseData, 'CustomResourcePhysicalID')
                 return
@@ -162,6 +164,7 @@
                 - Effect: Allow
                   Action:
                     - ec2:DescribeInstances
+                    - ec2:ModifyVolume
                   Resource: '*'
 
 
