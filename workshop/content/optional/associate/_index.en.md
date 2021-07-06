@@ -7,7 +7,7 @@ For us to be able to use request signing and IAM-based fine-grained access contr
 
 ### High-Level Instructions
 
-In the IAM console, assocate the **WildRydesAPI-StandardUserPolicy** with your Cognito Identity Pool's authenticated user role to provide all authenticated users access to invoke operations the **/ride** path.
+In the IAM console, associate the **WildRydesAPI-StandardUserPolicy** with your Cognito Identity Pool's authenticated user role to provide all authenticated users access to invoke operations the **/ride** path.
 
 {{% expand "Step-by-step instructions (expand for details)" %}}
 
