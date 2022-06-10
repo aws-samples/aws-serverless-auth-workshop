@@ -43,8 +43,8 @@ tar xvf website.tar.gz
 1. Run the following commands to upgrade your Node.js version to the latest version of Node.js 10. The [AWS Amplify](https://aws-amplify.github.io/) Javascript library which we will be using requires Node.js 10 or higher.
 
     ```plaintext
-    nvm i 10
-    nvm alias default 10
+    nvm i 16
+    nvm alias default 16
     ```
 
 2. Install the yarn package manager and website dependencies by running the following commands:
