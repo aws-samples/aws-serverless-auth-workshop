@@ -310,6 +310,8 @@ Resources:
 
   ProfilePicturesBucket:
     Properties:
+      VersioningConfiguration:
+        Status: Enabled
       CorsConfiguration:
         CorsRules:
         - AllowedHeaders: ["*"]
