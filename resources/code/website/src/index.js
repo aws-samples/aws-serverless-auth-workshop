@@ -13,8 +13,8 @@
  *  permissions and limitations under the License.
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Home, FAQ, Investors, MainApp, Unicorns, Profile } from './pages';
 import { SignIn, SignUp } from './auth';
 import 'normalize.css';
@@ -27,27 +27,32 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     render={props => (
     isAuthenticated() === true
       ? <Component {...props} />
-      : <Redirect to='/signin' />
+      : <Navigate to='/signin' />
   )} />
-)
+);
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route path="/faq" component={FAQ} />
-          <Route path="/investors" component={Investors} />
-          <Route path="/unicorns" component={Unicorns} />
-          <Route path="/register" component={SignUp} />
-	        <Route path="/signin" component={SignIn} />
-          <Route path="/profile" component={Profile} />
-          <PrivateRoute path="/app" component={MainApp} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/faq" element={<FAQ /> } />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/unicorns" element={<Unicorns />} />
+          <Route path="/register" element={<SignUp />} />
+	        <Route path="/signin" element={<SignIn />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route exact path='/app' element={<MainApp />}/>
+        </Routes>
       </BrowserRouter>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
