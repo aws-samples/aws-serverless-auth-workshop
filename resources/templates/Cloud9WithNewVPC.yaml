@@ -8,7 +8,7 @@
       Properties:
         Description: "Cloud9 IDE for the Serverless Authentication and Authorization Workshop"
         AutomaticStopTimeMinutes: 60
-        InstanceType: t2.micro
+        InstanceType: t3.small
         Name: !Sub ${AWS::StackName}-Cloud9Instance
         SubnetId: !Ref PublicSubnet1
       DependsOn: GatewayToInternet
