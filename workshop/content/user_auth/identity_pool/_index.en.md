@@ -13,7 +13,7 @@ You will need to create a Cognito Identity Pool linked to the Cognito User Pool 
 
 1. In the Cognito console, choose **Federated Identities** in the header bar to switch to the console for Cognito Federated Identities.
 
-2. Choose Create new **Identity pool**.
+2. Choose **Create new identity pool**.
 
 3. Input `wildrydes_identity_pool` as the Identity pool name. 
 
