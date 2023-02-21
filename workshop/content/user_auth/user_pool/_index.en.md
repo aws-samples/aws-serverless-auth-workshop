@@ -19,75 +19,49 @@ The console's region will default to the last region you were using previously. 
     
 2. Choose your desired **Region** in top-right of the console if not already selected. This should match the region where you launched your Cloud9 environment previously.
     
-3. Choose **Manage User Pools**.
+3. Choose **Create User Pool**.
 
-4. Choose **Create a User Pool** in the top right of the console.
+    ![User Pool Configuration](../images/cognito-create-user-pool.png)
 
-5. Provide a name for your user pool such as `WildRydes`.
+4. Under **Cognito user pool sign-in options**, check User name, Email, and Phone Number checkboxes, then select **Next**.
 
-6. Choose **Step through settings** to configure our user pool options.
+5. Leave the Password Policy defaults, then scroll down to Multi-factor authentication and select **No MFA**.  
 
-    ![User Pool Configuration](../images/cognito-userpool-setup-step1.png)
+    ![User Pool MFA Options](../images/cognito-mfa-options.png)
+
+6.  Leave all other defaults settings, then select **Next**.
     
-7. Leave **Username** selected, but additionally select **Also allow sign in with verified email address** and **Also allow sign in with verified phone number**.
+7. On the **Configure sign-up experience** page, leave all defaults and select **Next**.
 
-8. Leave all other attribute defaults as-is.
+8. On the **Configure message delivery** page, select **Send email with Cognito**.
 
-9. Choose **Next step**.
+    ![Cognito Message Delivery](../images/cognito-message-delivery.png)
 
-    ![User Pool attributes](../images/cognito-userpool-setup-step2.png)
+9. Scroll down to the **SMS** section, then select **Create a new IAM role** and enter **wildrydes-cognito-messages** for the IAM role name. Then select **Next**.
+
+    ![Cognito Messages IAM Role](../images/cognito-wildrydes-messages.png)
     
-10. Leave password policies and user sign up settings set to default setting and choose **Next Step**. 
-
-    ![User pool password settings](../images/cognito-userpool-setup-step3.png)
+10. Next, enter `WildRydes` as the **User pool name**. 
     
-11. Leave **MFA set to Off** for this workshop.
+11. Next, scroll down to the **Initial app client** section and leave Public client selected. For App client name, enter `wildrydes-web-app`.  
 
-12. Leave the default setting selected of requiring e-mail verification. 
+12. Make sure **Don't generate a client secret** is selected, then click **Next**
 
-13. Choose **Next step**.
-
-    ![User pool MFA settings](../images/cognito-userpool-setup-step4.png)
+13. Review the summary of all provided settings for accuracy then choose **Create user pool**. 
     
-14. Leave all message and SES defaults as-is and choose **Next step**.
-
-15. Skip adding any tags and click **Next step**.
-
-16. Choose **No** to not remember your user's devices then click **Next step**.
-
-    ![User pool device setting](../images/cognito-userpool-setup-step5.png)
-    
-17. In the next screen, click the **Add an app client** link. 
-
-18. Input `wildrydes-web-app` as the app client name.
-
-19. **Uncheck** ***Generate client secret***. Client secrets are used for server-side applications authentication and are not needed for JavaScript applications.
-
-20. Choose **Create app client**.
-
-21. Choose **Next step**.
-
-    ![User pool app clients](../images/cognito-userpool-setup-step6.png)
-    
-22. Leave all Lambda trigger settings set to none. These trigger settings allow you to extend the out-of-the-box sign-up and sign-in flows with your own custom logic, but we will not be using this feature in this workshop.
-
-23. Choose **Next step**. 
-
-24. Review summary of all provided settings for accuracy then choose **Create Pool**. 
-
-    ![User pool create pool](../images/cognito-userpool-setup-step7.png)
-    
-25. Within Cloud9, click the + symbol and choose to create **New File**. You will use this new blank editor tab as a scratchpad for various resource names and variables.
+14. Within Cloud9, click the + symbol and choose to create **New File**. You will use this new blank editor tab as a scratchpad for various resource names and variables.
 
     ![Cloud9 Scratchpad](../images/cloud9-createscratchpadtab.png)
     
-26. Back in the AWS Cognito console, copy your new User Pool Id into the scratchpad tab.
+15. Back in the AWS Cognito console, copy your new User Pool Id into the scratchpad tab.
 
     ![Cognito Pool ID](../images/cognito-userpool-copy-userpool-id.png)
     
-27. Choose **App clients** heading under General settings within the Cognito navigation panel.
+16. Click the **App Integration** tab and scroll all the way down to the bottom.  Then copy the Client ID into the scratch tab.
 
-28. Copy the ***App client ID*** over to your scratchpad. You will be using both of these values later on.
+    ![Cognito App Clients](../images/cognito-app-clients.png)
+
+17. Copy the ***App client ID*** over to your scratchpad. You will be using both of these values later on.
 
     ![Cognito App Client ID](../images/cognito-userpool-copy-appclient-id.png)
 
