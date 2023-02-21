@@ -15,7 +15,8 @@
 import React from 'react';
 import { Auth } from 'aws-amplify';
 import DynamicImage from '../components/DynamicImage';
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import '../css/app.css';
 
@@ -133,5 +134,21 @@ class SignUp extends React.Component {
     }
   }
 }
+
+
+const withRouter = Component => props => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const params = useParams();
+
+  return (
+    <Component
+      {...props}
+      location={location}
+      navigate={navigate}
+      params={params}
+    />
+  );
+};
 
 export default withRouter(SignUp);

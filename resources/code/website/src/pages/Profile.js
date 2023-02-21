@@ -16,7 +16,7 @@ import React from 'react';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
 import { Auth } from 'aws-amplify';
-import { S3Image } from 'aws-amplify-react';
+import { S3Image } from '@aws-amplify/ui-react';
 import '../css/main.css';
 
 class Profile extends React.Component {

@@ -15,7 +15,8 @@
 import React from 'react';
 import { Auth } from 'aws-amplify';
 import DynamicImage from '../components/DynamicImage';
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import '../css/app.css';
 
@@ -47,6 +48,7 @@ class SignIn extends React.Component {
     // Go back home
     this.props.history.replace('/');
   }
+
 
   onEmailChanged(e) {
     this.setState({ email: e.target.value.toLowerCase() });
@@ -117,6 +119,21 @@ class SignIn extends React.Component {
     }
   }
 }
+
+const withRouter = Component => props => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const params = useParams();
+
+  return (
+    <Component
+      {...props}
+      location={location}
+      navigate={navigate}
+      params={params}
+    />
+  );
+};
 
 export default withRouter(SignIn);
 

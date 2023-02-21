@@ -28,7 +28,7 @@ You'll need to complete the implementation of the onSubmitForm and onSubmitVerif
 4. Next, edit the ***website/src/index.js*** file to add the following lines to the **top of the file (but below all the other imports)** to configure Amplify then save your changes:
 
     ```javascript
-    import Amplify from 'aws-amplify';
+    import { Amplify } from 'aws-amplify';
     import awsConfig from './amplify-config';
 
     Amplify.configure(awsConfig);
@@ -44,9 +44,9 @@ You'll need to complete the implementation of the onSubmitForm and onSubmitVerif
     import { SignIn, SignUp } from './auth';
     import 'normalize.css';
    
-    import Amplify from 'aws-amplify';
+    import { Amplify } from 'aws-amplify';
     import awsConfig from './amplify-config';
-   
+
     Amplify.configure(awsConfig);
 
     const isAuthenticated = () => false;
@@ -112,7 +112,7 @@ You'll need to complete the implementation of the onSubmitForm and onSubmitVerif
           );
           console.log(data);
           // Go to the sign in page
-          this.props.history.replace('/signin');
+          window.location.replace("/signin");
         } catch (err) {
           alert(err.message);
           console.error("Exception from Auth.confirmSignUp: ", err);
@@ -149,7 +149,7 @@ You'll need to complete the implementation of the onSubmitForm and onSubmitVerif
               console.log('Cognito User Identity Token:', session.getIdToken().getJwtToken());
               // console.log('Cognito User Refresh Token', session.getRefreshToken().getToken());
               this.setState({ stage: 0, email: '', password: '', code: '' });
-              this.props.history.replace('/app');
+              window.location.replace("/app");
             }
         } catch (err) {
             alert(err.message);
@@ -170,7 +170,7 @@ You'll need to complete the implementation of the onSubmitForm and onSubmitVerif
           console.log('Cognito User Identity Token:', session.getIdToken().getJwtToken());
           // console.log('Cognito User Refresh Token', session.getRefreshToken().getToken());
           this.setState({ stage: 0, email: '', password: '', code: '' });
-          this.props.history.replace('/app');
+          window.location.replace("/app");
         } catch (err) {
           alert(err.message);
           console.error('Auth.confirmSignIn(): ', err);
